@@ -1,31 +1,25 @@
-{% load static %}
-{% for articles in articles %}
+{% extends "Base.html" %}
+{% block title %}
+    Articles
+{% endblock %}
 
+{% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>articles</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
-<body>
     <div class="container">
-        <a href="{{'home'}}">Home Page</a>
-        <h1>articles</h1>
-        <h2>
-            <a href="#">{{ articles.title }}</a>
-        </h2>
-        <p>{{ articles.snippet }}</p>
-        <p>{{ articles.date }}</p>
+        <h1>Articles List</h1>
+    <br>
+          {% for articles in articles %}
+              <hr class="hr" />
+              <div class="d-flex"><a href="{% url 'articles:detail' slug=articles.slug %}">{{ articles.title }}</a></div>
+              <!-- Element on the left -->
+              <!-- Vertical divider -->
+              <div class="vr" style="height: 30px;">{{ articles.date }} </div>
 
+              <!-- Element on the left -->
+              <div class="px-4">{{ articles.snippet }}</div>
 
+        {%endfor%}
     </div>
 
-</body>
-</html>
 
-
-
-
-{% endfor %}
+{% endblock %}

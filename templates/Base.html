@@ -2,27 +2,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
      <title>
-
-     #Insert from page
-        {%block title%}
-     Articles
-        {%endblock%}
-
-
+         {% block title %}
+         {% endblock %}
      </title>
 
      <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-
-#Insert from page
-    {%block content%}
-
+<h2>
+    <a href="{% url 'articles:list' %}">LOGO</a>
+</h2>
+    {%block content %}
     {%endblock%}
-
-
 </body>
 </html>
