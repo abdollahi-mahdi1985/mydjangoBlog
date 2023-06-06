@@ -6,8 +6,16 @@
 {% block content %}
 
     <div class="article-detail">
-        <div class="atricle">
-            <h1>{{article.title}}</h1>
+        <h1 class="article">
+
+            <img src="{{ article.image.url }}" alt="">
+            <h1>{{ article.title }} </h1>
+            <h1></h1>
+
+            <h3> {{ article.date }} </h3>
+            <h1></h1>
+
+            <div class="vr" style="height: 30px;"> {{ article.body }} </div>
 
         </div>
     </div>

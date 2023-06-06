@@ -7,18 +7,16 @@
 
     <div class="container">
         <h1>Articles List</h1>
-    <br>
+        <br>
+{#          {% form.username %}#}
           {% for articles in articles %}
               <hr class="hr" />
               <div class="d-flex"><a href="{% url 'articles:detail' slug=articles.slug %}">{{ articles.title }}</a></div>
-              <!-- Element on the left -->
-              <!-- Vertical divider -->
               <div class="vr" style="height: 30px;">{{ articles.date }} </div>
+              <div class="vr" style="height: 30px;">{{ articles.snippet }} </div>
 
-              <!-- Element on the left -->
-              <div class="px-4">{{ articles.snippet }}</div>
-
-        {%endfor%}
+              </div>
+         {%endfor%}
     </div>
 
 
