@@ -18,4 +18,4 @@ def article_detail(request, slug):
 
 @login_required(login_url="/accounts/login")
 def create_article(request):
-    return render(request, 'articles/create_atricle.html')
+    return render(request, 'articles/create_article.html')
